@@ -46,18 +46,21 @@ For the dashboards provided within UnO Observability for Dynatrace, the only sup
 
 NOTE: If you are using Dynatrace version higher than 1.268 switch to the requird version by running the following:
 
-   In the Dynatrace menu > Select user profile > Toggle off Latest Dynatrace
+   In the Dynatrace menu > Select user profile > Turn off Latest Dynatrace
 
 ### 1. Installating and configuring Dynatrace
-1. From [HCL License Portal](https://id.hcltechsw.com/login/login.htm) download the appropriate UnO Observability installation package:
-   UnO_OBSERVABILITY_APP_FOR_DYNATRACE_1.1.0.0.tar.gz
-2. Follow the below command to untar the gzip file 
+1. From [HCL License Portal](https://id.hcltechsw.com/login/login.htm) download the appropriate HCL Universal Orchestrator Observability installation package:
+   Universal Orchestrator for UnO Observability Add-on
+   
+2.  Installation package for Datadog: UNO_OBSERVABILITY_APP_FOR_DYNATRACE_1.1.0.0.tar.gz
+
+3. Follow the below command to untar the gzip file 
   
   ```
-   tar -xvzf UnO_OBSERVABILITY_APP_FOR_DYNATRACE_1.1.0.0.tar.gz
+	tar -xvzf UNO_OBSERVABILITY_APP_FOR_DYNATRACE_1.1.0.0.tar.gz
   ```
 
-4. Follow the steps mentioned in this ReadMe file to complete the solution setup.
+4. Follow the steps mentioned on this ReadMe file to complete the solution setup.
 
 #### 2. Install Dynatrace Operator  
 
@@ -153,14 +156,7 @@ objectname:content["objectName"] )
 6. Add log sample as mentioned below:
 ```
 {
-  "content":"2023-04-18T09:19:12.574918247Z stdout F 
-  {\"timestamp\":\"2023-04-18T09:19:12.516Z\",\"objectType\":
-  \"PLJOB\",\"actionType\":\"CHANGE_JOB_STATUS\",\"definition\"
-  :\"AWSMOR049I \\\"TEST12\\\" 
-  status changed to \\\"READY READY_WAITING_FOR_RESOURCES\\\".
-  \",\"arguments\":\"{\\\"newStatus\\\":\\\"READY READY_WAITING_FOR_RESOURCES\\\"
-  ,\\\"entityName\\\":\\\"TEST12\\\"}\",
-  \"userName\":\"system\",\"objectName\":\"TEST12\"}"
+  "content":"2023-04-18T09:19:12.574918247Z stdout F {\"timestamp\":\"2023-04-18T09:19:12.516Z\",\"objectType\":\"PLJOB\",\"actionType\":\"CHANGE_JOB_STATUS\",\"definition\":\"AWSMOR049I \\\"TEST12\\\" status changed to \\\"READY READY_WAITING_FOR_RESOURCES\\\".\",\"arguments\":\"{\\\"newStatus\\\":\\\"READY READY_WAITING_FOR_RESOURCES\\\",\\\"entityName\\\":\\\"TEST12\\\"}\",\"userName\":\"system\",\"objectName\":\"TEST12\"}"
 }
 ```
 7. Select Save Changes.  
@@ -436,7 +432,7 @@ By clicking a button or menu option, you open a new tab displaying the selected 
     
 4. Q: How can I switch to Dynatrace version 1.268 from higer version? 
   
-   A: In the Dynatrace menu > Select user profile > Toggle off Latest Dynatrace.
+   A: In the Dynatrace menu > Select user profile > Turn off Latest Dynatrace.
      
 5. Q: Metrics are not ingested into Dynatrace ? 
      
