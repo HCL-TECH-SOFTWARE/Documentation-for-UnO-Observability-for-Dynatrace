@@ -98,8 +98,8 @@ Rerun the command until the output looks like this:
 
 ![](screenshots/kubernetes_dynatrace_monitor.PNG)
 
-NOTE : This Dynatrace version is monitoring all the namespaces in the cluster.So add your namespaces in the global filter to see your namespace related information.
-
+NOTE : This Dynatrace version is monitoring all the namespaces in the cluster. Add your namespaces in the global filter to see your namespace related information.
+   
 ## Log Processing and Ingestion setup
  Dynatrace OneAgent collects all logs container and pods then send it to Dynatrace SaaS. The logs are unstructured so, follow the steps to process the logs.  
 
@@ -137,7 +137,7 @@ UNO Log Parsing
 content="objectType"
 ```
 
- For Dynatrace Version 1.269 or above,Use the below matches
+ For Dynatrace Version 1.269 or above, use the below matches:
 ```
 matchesPhrase(content, "objectType")
 ```
@@ -169,7 +169,7 @@ objectname:content["objectName"] )
 ```
 log.uno.content
 ```
-4. Add Matcher as mentioned below.
+4. Add Matcher as mentioned below:
 ```
 content="objectType"
 ```
@@ -213,7 +213,7 @@ uno-app.jar hcl-uno-audit*
 
 #### 5. Log storage configuration 
 
-1. In the Dynatrace menu, go to Setting.s
+1. In the Dynatrace menu, go to Settings.
 2. Select Settings > Log Monitoring > Log storage configuration.
 3. Update to new Log storage configuration if not updated.
 4. Select Add rule then Add Rule name as UNO Log Storage.
@@ -230,7 +230,8 @@ uno-app.jar hcl-uno-audit*
 
 ### 1. Metric Ingestion 
 
-1. In Dynatrace, go to your Kubernetes cluster settings page and enable
+1. In Dynatrace, go to Infrastructure > Kubernetes > Select Actions from your Kubernetes cluster > Select settings.
+2. Select Monitoring settings page and then enable the below
    - Monitor Kubernetes namespaces, services, workloads, and pods
    - Monitor annotated Prometheus exporters
 
@@ -255,19 +256,19 @@ spec:
   clusterIP: None
   ``` 
 
-2. Copy the above service content and save it as dynakube-service.yaml file. 
+3. Copy the above service content and save it as dynakube-service.yaml file. 
 
-3. Run the below command and describe any pods from maestro-suite and update the dynakube-service.yaml file:
+4. Run the below command and describe any pods from maestro-suite and update the dynakube-service.yaml file:
 ```
 kubectl describe pod <POD_NAME>  -n maestro-suite
 ``` 
-4. Replace namespace from dynakube-service.yaml with maestro-suite namespace.
+5. Replace namespace from dynakube-service.yaml with maestro-suite namespace.
 
-5. Replace port, path annotation from dynakube-service.yaml with your pod annotation values.
+6. Replace port, path annotation from dynakube-service.yaml with your pod annotation values.
 
-6. Replace release selector from dynakube-service.yaml with maestro-suite pod release label value.
+7. Replace release selector from dynakube-service.yaml with maestro-suite pod release label value.
 
-7. Run the blow command to create the service:
+8. Run the blow command to create the service:
  ```
  kubectl create -f dynakube-service.yaml
  ```
@@ -277,8 +278,8 @@ There are a few metrics to which you are required to provide metadata to have go
 
 | Metric name	 | Display name |
 | ------ | ------ |
-|  application_uno_orchestrator_job_by_folder |	Jobs by folder |
-| application_uno_orchestrator_job_by_workstation  |	Jobs by workstation |
+| application_uno_orchestrator_jobs_by_folder_jobs |	Jobs by folder |
+| application_uno_orchestrator_jobs_by_workstation_jobs  |	Jobs by workstation |
 
 Steps to follow:
 1. Go to Menu, Observe and Explore > Metrics.
@@ -290,7 +291,7 @@ Steps to follow:
 
 <!-- ![Side panel](/overview_dashboard.PNG) -->
 
-NOTE :  Follow this setting metadata step once the mentioned metrics are ingestion into Dynatrace.
+NOTE :  Follow this setting metadata step once the mentioned metrics are ingested into Dynatrace.
 
 ## UnO Monitoring Dashboards and Alerts setup in Dynatrace
    Follow the below steps to upload and configure the UnO Monitoring Dashboards and Alerts.
@@ -298,10 +299,11 @@ NOTE :  Follow this setting metadata step once the mentioned metrics are ingesti
 NOTE : This Alerts and Email Notification setup is developed and tested on Dynatrace SaaS Version 1.268.
 
  ##### 1. Getting Environment Link
-  1. Select the user icon at the top right corner.
-  2. Select Account > Account Settings.
-  3. Go to Consumption by Environment section.
-  4. Select your Environment and copy the link address of Environment.
+  1. Get the browser URL of your environment as mentioned below.
+
+ ```
+ https://XXXX.YYYY.dynatrace.com
+ ```
 
  ##### 2. Create Access Token
  1. In the Dynatrace menu, go to Access Token and then select Generate new Token.
@@ -348,7 +350,7 @@ UnO Observability Dashboard​ provides the link to all dashboards. Once the das
 
 1. Get the copied dashboard id from the Create dashboard step.
 2. In the Dynatrace menu, go to Dashboards.  
-3. Select UnO Observability Dashboard:
+3. Open HCL Universal Orchestrator Observability Dashboard:
     - Select Edit option at the top right corner.
     - Go to the bottom of the dashboard.
     - Select the markdown component as shown in the image and replace your ENVIRONMENT_LINK and id with your respective dashboard id.
