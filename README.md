@@ -420,17 +420,17 @@ By clicking a button or menu option, you open a new tab displaying the selected 
 ## FAQs
 
 
-1. Q: The steps mentioned in the Log storage configuration ar not matching.
+1. Q: The ReadMe steps mentioned in the Log storage configuration section was not present in Dynatrace?
 
    A: Update to new Log storage configuration if not updated.
 
-2. Q. The steps Custom log source configuration are not matching.
+2. Q: The ReadMe steps mentioned in the  Custom log source configuration was not present in Dynatrace?
  
     A: Activate Custom log source if not activated.
-     
-3. Q: Which version of Dynatrace is supported for this setup? 
+
+3. Q: Which version of Dynatrace this Solution is Developed/Tested?
   
-   A. This setup is supported for Dynatrace SaaS Version 1.268.
+   A. This setup is Developed/Tested on Dynatrace SaaS Version 1.268
     
 4. Q: How can I switch to Dynatrace version 1.268 from higer version? 
   
